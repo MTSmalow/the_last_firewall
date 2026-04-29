@@ -1,11 +1,22 @@
 extends CharacterBody2D
 
-var direction : Vector2 = Vector2(0, 1) # começa olhando pra baixo
+var max_life := 100
+var life := 100
+var direction : Vector2 = Vector2(0, 1)
 var speed := 200
+var is_attacking := false
+var is_hurt := false
+var knockback_force := 400
+var knockback_velocity := Vector2()
 
+var life_bar = null
 @onready var anim = $AnimatedSprite2D
 
 func read_input():
+	if is_attacking:
+		velocity = Vector2()
+		return
+	
 	velocity = Vector2()
 	
 	if Input.is_action_pressed("up"):
@@ -23,9 +34,24 @@ func read_input():
 
 	velocity = velocity.normalized() * speed
 
+func handle_attack():
+	if Input.is_action_just_pressed("attack") and not is_attacking:
+		is_attacking = true
+		
+		if direction == Vector2(0, -1):
+			anim.play("attack_up")
+		elif direction == Vector2(0, 1):
+			anim.play("attack_down")
+		elif direction == Vector2(-1, 0):
+			anim.play("attack_left")
+		elif direction == Vector2(1, 0):
+			anim.play("attack_right")
+
 func update_animation():
+	if is_attacking:
+		return
+	
 	if velocity.length() == 0:
-		# PARADO (idle)
 		if direction == Vector2(0, -1):
 			anim.play("idle_up")
 		elif direction == Vector2(0, 1):
@@ -35,7 +61,6 @@ func update_animation():
 		elif direction == Vector2(1, 0):
 			anim.play("idle_right")
 	else:
-		# ANDANDO (walk)
 		if direction == Vector2(0, -1):
 			anim.play("walk_up")
 		elif direction == Vector2(0, 1):
@@ -46,6 +71,50 @@ func update_animation():
 			anim.play("walk_right")
 
 func _physics_process(delta):
-	read_input()
-	update_animation()
+	if is_hurt:
+		velocity = knockback_velocity
+	else:
+		handle_attack()
+		read_input()
+		update_animation()
+	
 	move_and_slide()
+
+
+func _on_animated_sprite_2d_animation_finished():
+	if anim.animation.begins_with("attack"):
+		is_attacking = false
+		
+func hit_enemy(enemy):
+	if is_attacking:
+		enemy.take_damage()
+		
+func take_damage(amount, from_position = Vector2.ZERO):
+	if is_hurt:
+		return
+	
+	life -= amount
+	life = clamp(life, 0, max_life)
+	
+	if life_bar:
+		life_bar.value = life
+	
+	# knockback
+	var dir = (global_position - from_position).normalized()
+	knockback_velocity = dir * knockback_force
+	
+	is_hurt = true
+	
+	await get_tree().create_timer(0.2).timeout
+	is_hurt = false
+	
+	if life <= 0:
+		die()
+func die():
+	print("Player morreu")
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	
+	if body.is_in_group("enemy") and is_attacking:
+		body.take_damage(global_position)
