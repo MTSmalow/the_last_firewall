@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cc1s24j2ibtpt"]
+
+[ext_resource type="Script" uid="uid://ckme0ycnb7k1s" path="res://scripts/dialog_ui.gd" id="1_wgg1a"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1473688669 groups=["dialog"]]
+script = ExtResource("1_wgg1a")
+
+[node name="Panel" type="Panel" parent="." unique_id=1701230201]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -550.0
+offset_top = 316.0
+offset_right = 550.0
+offset_bottom = 356.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=725840057]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="Panel/MarginContainer" unique_id=815350569 groups=["dialog"]]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2

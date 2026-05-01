@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b8qrwmls1ed6m"]
+[gd_scene format=3 uid="uid://b58jcsywxtso4"]
 
 [ext_resource type="Texture2D" uid="uid://c56h6e40sov14" path="res://assets/Enemies/Skeleton.png" id="1_7p1mj"]
 [ext_resource type="Script" uid="uid://y82a8k3dhd70" path="res://scripts/inimigo.gd" id="1_md0e3"]
@@ -6,7 +6,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5uy6h"]
 radius = 3.0209565
-height = 16.110357
+height = 18.355024
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x6q4o"]
 atlas = ExtResource("1_7p1mj")
@@ -553,13 +553,12 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ra3w"]
-size = Vector2(12, 20)
+size = Vector2(17, 22)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1299634097 groups=["enemy"]]
 script = ExtResource("1_md0e3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1013062127]
-visible = false
 position = Vector2(0.9999999, 5.999999)
 rotation = -1.5491331
 scale = Vector2(1, 0.8714913)
@@ -572,7 +571,7 @@ sprite_frames = SubResource("SpriteFrames_0pw1s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1370207762]
 visible = false
-position = Vector2(0, -1)
+position = Vector2(0.5, -2)
 shape = SubResource("RectangleShape2D_4ra3w")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -5,6 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://c57rwga6titur" path="res://assets/Player/Player2.png" id="4_dqkch"]
 [ext_resource type="Texture2D" uid="uid://dumj017jx48u4" path="res://assets/Player/Player_Actions.png" id="5_qlg0r"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dqkch"]
+radius = 6.036119
+height = 18.034048
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_cs1tg"]
 atlas = ExtResource("4_dqkch")
 region = Rect2(0, 192, 32, 32)
@@ -491,7 +495,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack_down",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -508,7 +512,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack_left",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -525,7 +529,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack_right",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -542,7 +546,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack_up",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -774,7 +778,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_down",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -797,7 +801,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_left",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -820,7 +824,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_right",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -843,7 +847,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_up",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -931,7 +935,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_down",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -954,7 +958,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_left",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -977,7 +981,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_right",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1000,30 +1004,33 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_up",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dqkch"]
-radius = 14.0
+radius = 19.0
 
 [node name="Player" type="Node2D" unique_id=236905616]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1693983974 groups=["player"]]
 script = ExtResource("1_g2els")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D" unique_id=1823468658]
-polygon = PackedVector2Array(-7, 7, -5, 9, 5, 9, 6, 7, 4, 5, -4, 5)
-
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1208195770]
+zoom = Vector2(2, 2)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1931275274]
+position = Vector2(1, 5)
+rotation = -1.5522184
+shape = SubResource("CapsuleShape2D_dqkch")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1194575516]
 sprite_frames = SubResource("SpriteFrames_0yhus")
-animation = &"attack_down"
+animation = &"walk_up"
 
 [node name="AttackArea" type="Area2D" parent="CharacterBody2D" unique_id=1140600627]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/AttackArea" unique_id=1156814026]
-position = Vector2(-1, 0)
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_dqkch")
 
 [connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="CharacterBody2D" method="_on_animated_sprite_2d_animation_finished"]

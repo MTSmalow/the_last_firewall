@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://4med3yg4ankl"]
+
+[ext_resource type="Script" uid="uid://ix7poswiljsg" path="res://scripts/Npc_inte_1.gd" id="1_jl4d7"]
+[ext_resource type="Texture2D" uid="uid://b54m64axb8g4o" path="res://assets/Npc/Blonde Man/blonde_man.png" id="2_jl4d7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pgelm"]
+radius = 9.43113
+height = 24.869799
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrgn0"]
+atlas = ExtResource("2_jl4d7")
+region = Rect2(0, 0, 29, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkmhn"]
+atlas = ExtResource("2_jl4d7")
+region = Rect2(32, 0, 29, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqrol"]
+atlas = ExtResource("2_jl4d7")
+region = Rect2(64, 0, 29, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0e13"]
+atlas = ExtResource("2_jl4d7")
+region = Rect2(96, 0, 29, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lrtft"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrgn0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkmhn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqrol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0e13")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lpr8a"]
+radius = 16.996014
+height = 34.46539
+
+[node name="OverworkedVillager" type="Node2D" unique_id=295565763]
+script = ExtResource("1_jl4d7")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1780563814]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1817746232]
+position = Vector2(2, -1)
+rotation = 0.005172968
+scale = Vector2(0.95654345, 1.0454328)
+skew = -0.0019651651
+shape = SubResource("CapsuleShape2D_pgelm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1959736505]
+position = Vector2(0.99999976, -8)
+scale = Vector2(1.146013, 1.2249053)
+sprite_frames = SubResource("SpriteFrames_lrtft")
+frame_progress = 0.5300065
+
+[node name="Area2D" type="Area2D" parent="." unique_id=32549493]
+position = Vector2(0.9999999, 5.999999)
+rotation = -1.5491331
+scale = Vector2(0.99999994, 0.8714913)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=709427185]
+visible = false
+position = Vector2(6.020253, 0.99805486)
+rotation = -0.08193614
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("CapsuleShape2D_lpr8a")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

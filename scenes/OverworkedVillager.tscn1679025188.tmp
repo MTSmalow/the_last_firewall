@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://c1cqqxuqiyiiy"]
+
+[ext_resource type="Texture2D" uid="uid://bjy43ip7daoer" path="res://assets/Npc/OverworkedVillager/OverworkedVillager.png" id="1_dscoy"]
+[ext_resource type="Script" uid="uid://ix7poswiljsg" path="res://scripts/Npc_inte_1.gd" id="1_lpr8a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgelm"]
+atlas = ExtResource("1_dscoy")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3eeo"]
+atlas = ExtResource("1_dscoy")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bk5ih"]
+atlas = ExtResource("1_dscoy")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvkhv"]
+atlas = ExtResource("1_dscoy")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lrtft"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgelm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3eeo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk5ih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvkhv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lpr8a"]
+radius = 11.105728
+height = 27.582253
+
+[node name="OverworkedVillager" type="Node2D" unique_id=295565763]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1959736505]
+position = Vector2(3.5, -3)
+scale = Vector2(1.4375, 1.375)
+sprite_frames = SubResource("SpriteFrames_lrtft")
+frame_progress = 0.92004675
+script = ExtResource("1_lpr8a")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=32549493]
+position = Vector2(0.9999999, 5.999999)
+rotation = -1.5491331
+scale = Vector2(0.99999994, 0.8714913)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=709427185]
+position = Vector2(7.9981213, -0.19884586)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("CapsuleShape2D_lpr8a")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
