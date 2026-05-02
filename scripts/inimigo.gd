@@ -79,6 +79,7 @@ func take_damage(from_position):
 		die()
 
 func die():
+	anim.play("death")
 	queue_free()
 
 # Detecta quando o player entra na área de ataque

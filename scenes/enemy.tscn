@@ -566,6 +566,7 @@ shape = SubResource("CapsuleShape2D_5uy6h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1088739734]
 sprite_frames = SubResource("SpriteFrames_0pw1s")
+animation = &"death"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1555922340]
 

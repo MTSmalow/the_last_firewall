@@ -6,11 +6,10 @@ var player_in_range = false
 var dialog_index = 0
 var is_talking = false
 var dialogs = [
-	"Alice: Bom dia… bom dia… bom d— ERRO… bom dia.",
-	"Você: que?",
-	"Alice: Bom dia… bom dia… bom d— ERRO… bom dia.",
-	"Você: Que porcaria é essa? o que ta acontecendo?",
-	"Você: Acho melhor eu ir para a vila, talvez alguem la saiba o que esta acontecendo."
+	"Você: Por que aquele cara esta daquele jeito?",
+	"Você: Há algo errado",
+	"Você: Ele não reage ao obstáculo, apenas continua, como uma marionete.",
+	"Você: O que esta acontecendo aqui?"
 ]
 
 

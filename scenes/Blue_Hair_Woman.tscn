@@ -44,8 +44,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lpr8a"]
-radius = 16.996014
-height = 34.46539
+radius = 20.967361
+height = 41.934723
 
 [node name="Blue_Hair_Woman" type="Node2D" unique_id=295565763]
 script = ExtResource("1_lpr8a")
@@ -71,8 +71,7 @@ rotation = -1.5491331
 scale = Vector2(0.99999994, 0.8714913)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=709427185]
-visible = false
-position = Vector2(6.020253, 0.99805486)
+position = Vector2(1.0430894, 2.2695224)
 rotation = -0.08193614
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("CapsuleShape2D_lpr8a")

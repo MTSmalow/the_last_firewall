@@ -1,42 +1,42 @@
-[gd_scene format=3 uid="uid://4med3yg4ankl"]
+[gd_scene format=3 uid="uid://0eylaxn72dy4"]
 
-[ext_resource type="Script" uid="uid://dgemmq7s8h01n" path="res://scripts/adventurous.gd" id="1_jl4d7"]
-[ext_resource type="Texture2D" uid="uid://b54m64axb8g4o" path="res://assets/Npc/Blonde Man/blonde_man.png" id="2_jl4d7"]
+[ext_resource type="Script" uid="uid://kbnsgwyojf6q" path="res://scripts/OverworkedVillager.gd" id="1_lpr8a"]
+[ext_resource type="Texture2D" uid="uid://bjy43ip7daoer" path="res://assets/Npc/OverworkedVillager/OverworkedVillager.png" id="2_lpr8a"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pgelm"]
 radius = 9.43113
 height = 24.869799
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jl4d7"]
-atlas = ExtResource("2_jl4d7")
-region = Rect2(0, 164, 32, 41)
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgelm"]
+atlas = ExtResource("2_lpr8a")
+region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nrgn0"]
-atlas = ExtResource("2_jl4d7")
-region = Rect2(32, 164, 32, 41)
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3eeo"]
+atlas = ExtResource("2_lpr8a")
+region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xkmhn"]
-atlas = ExtResource("2_jl4d7")
-region = Rect2(64, 164, 32, 41)
+[sub_resource type="AtlasTexture" id="AtlasTexture_bk5ih"]
+atlas = ExtResource("2_lpr8a")
+region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rqrol"]
-atlas = ExtResource("2_jl4d7")
-region = Rect2(96, 164, 32, 41)
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvkhv"]
+atlas = ExtResource("2_lpr8a")
+region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lrtft"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jl4d7")
+"texture": SubResource("AtlasTexture_pgelm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nrgn0")
+"texture": SubResource("AtlasTexture_u3eeo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xkmhn")
+"texture": SubResource("AtlasTexture_bk5ih")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rqrol")
+"texture": SubResource("AtlasTexture_yvkhv")
 }],
 "loop": true,
 "name": &"default",
@@ -48,7 +48,7 @@ radius = 28.73802
 height = 57.47604
 
 [node name="OverworkedVillager" type="Node2D" unique_id=295565763]
-script = ExtResource("1_jl4d7")
+script = ExtResource("1_lpr8a")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1780563814]
 
@@ -60,7 +60,7 @@ skew = -0.0019651651
 shape = SubResource("CapsuleShape2D_pgelm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1959736505]
-position = Vector2(3, 1.0000002)
+position = Vector2(3, -2)
 scale = Vector2(1.146013, 1.2249053)
 sprite_frames = SubResource("SpriteFrames_lrtft")
 frame_progress = 0.25974452
@@ -71,7 +71,7 @@ rotation = -1.5491331
 scale = Vector2(0.99999994, 0.8714913)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=709427185]
-position = Vector2(6.020253, 0.99805486)
+position = Vector2(7.0200186, 0.973199)
 rotation = -0.08193614
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("CapsuleShape2D_lpr8a")
