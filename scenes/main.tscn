@@ -19,8 +19,13 @@
 [ext_resource type="Script" uid="uid://lqkg02we3nsm" path="res://scripts/trigger.gd" id="17_muem4"]
 [ext_resource type="Script" uid="uid://bijporhwhpds8" path="res://scripts/trigger2.gd" id="18_dp3eg"]
 [ext_resource type="PackedScene" uid="uid://0eylaxn72dy4" path="res://scenes/OverworkedVillager.tscn" id="19_0ld40"]
+[ext_resource type="PackedScene" uid="uid://dg2fkovy2byk1" path="res://scenes/item.tscn" id="19_y6deb"]
 [ext_resource type="Script" uid="uid://d1c334v827iln" path="res://scripts/trigger3.gd" id="20_gqmmt"]
 [ext_resource type="Script" uid="uid://xk68lhdny26i" path="res://scripts/trigger4.gd" id="21_yc10j"]
+[ext_resource type="PackedScene" uid="uid://10umlnfk474h" path="res://scenes/eco.tscn" id="22_jscy8"]
+[ext_resource type="Script" uid="uid://c0y0u3svy3mra" path="res://scripts/trigger_5.gd" id="23_og1vs"]
+[ext_resource type="Script" uid="uid://p2h60o4ekoir" path="res://scripts/quest_ui.gd" id="23_pm3ni"]
+[ext_resource type="PackedScene" uid="uid://cqfcsb1wkcgu6" path="res://scenes/barreira.tscn" id="26_2wyq8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_choun"]
 texture = ExtResource("1_85g3d")
@@ -1689,6 +1694,10 @@ height = 265.7196
 [sub_resource type="CircleShape2D" id="CircleShape2D_jscy8"]
 radius = 131.1069
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y6deb"]
+radius = 22.999207
+height = 135.68652
+
 [node name="Node2D" type="Node2D" unique_id=184766139]
 script = ExtResource("1_trceg")
 
@@ -1722,11 +1731,19 @@ tile_set = SubResource("TileSet_2f3dj")
 format = 2
 layer_0/tile_data = PackedInt32Array(4718595, 524288, 10, 4784131, 524288, 11, 4849667, 524288, 12, 720907, 1310721, 1, 786443, 1310721, 2, 786438, 1114113, 7, 655369, 1179649, 0, 655370, 1245185, 0, 3997702, 524288, 10, 4063238, 524288, 11, 4128774, 524288, 12, 2752562, 1114113, 1, 2818098, 1114113, 2, 2883634, 1114113, 3, 2949170, 1114113, 4, 2687027, 1179649, 0, 2752563, 1179649, 1, 2818099, 1179649, 2, 2883635, 1179649, 3, 2949171, 1179649, 4, 2687028, 1245185, 0, 2752564, 1245185, 1, 2818100, 1245185, 2, 2883636, 1245185, 3, 2949172, 1245185, 4, 2752565, 1310721, 1, 2818101, 1310721, 2, 2883637, 1310721, 3, 2949173, 1310721, 4, 2818083, 1114113, 5, 2883619, 1114113, 6, 2949155, 1114113, 7, 2818084, 1179649, 5, 2883620, 1179649, 6, 2949156, 1179649, 7, 5636143, 1114113, 1, 5701679, 1114113, 2, 5767215, 1114113, 3, 5832751, 1114113, 4, 5570608, 1179649, 0, 5636144, 1179649, 1, 5701680, 1179649, 2, 5767216, 1179649, 3, 5832752, 1179649, 4, 5570609, 1245185, 0, 5636145, 1245185, 1, 5701681, 1245185, 2, 5767217, 1245185, 3, 5832753, 1245185, 4, 5636146, 1310721, 1, 5701682, 1310721, 2, 5767218, 1310721, 3, 5832754, 1310721, 4, 5636153, 1114113, 1, 5701689, 1114113, 2, 5767225, 1114113, 3, 5832761, 1114113, 4, 5570618, 1179649, 0, 5636154, 1179649, 1, 5701690, 1179649, 2, 5767226, 1179649, 3, 5832762, 1179649, 4, 5570619, 1245185, 0, 5636155, 1245185, 1, 5701691, 1245185, 2, 5767227, 1245185, 3, 5832763, 1245185, 4, 5636156, 1310721, 1, 5701692, 1310721, 2, 5767228, 1310721, 3, 5832764, 1310721, 4, 5570562, 1114113, 1, 5636098, 1114113, 2, 5767178, 983041, 2, 5111811, 983041, 2, 5111809, 1048577, 3, 5111813, 1048577, 3, 4587526, 1048577, 3, 5046279, 917505, 3, 4653061, 917505, 3, 4522010, 983041, 8, 4522011, 983041, 8, 4522016, 983041, 8, 4587552, 983041, 8, 4653077, 983041, 8, 4718613, 983041, 8, 4849684, 983041, 8, 5177370, 1048577, 7, 5111835, 1048577, 7, 5046299, 1048577, 7, 5111833, 1048577, 7, 4784162, 1048577, 7, 4849698, 1048577, 7, 4915235, 1048577, 7, 4718634, 1048577, 7, 4653099, 1048577, 7, 4653100, 1048577, 7, 4587565, 1048577, 7, 4456499, 1048577, 7, 4587569, 1048577, 7, 4653104, 1048577, 7, 4194364, 1048577, 7, 4259898, 1048577, 7, 4325431, 1048577, 7, 4390969, 1048577, 7, 4718625, 917505, 8, 4718617, 917505, 8, 5177375, 1048577, 8, 4980759, 1048577, 8, 4718622, 983041, 7, 4849690, 983041, 7, 4980767, 983041, 7, 5046293, 983041, 7, 5111829, 983041, 7, 3342339, 1114113, 1, 3407875, 1114113, 2, 3473411, 1114113, 3, 3538947, 1114113, 4, 3276804, 1179649, 0, 3342340, 1179649, 1, 3407876, 1179649, 2, 3473412, 1179649, 3, 3538948, 1179649, 4, 3276805, 1245185, 0, 3342341, 1245185, 1, 3407877, 1245185, 2, 3473413, 1245185, 3, 3538949, 1245185, 4, 3342342, 1310721, 1, 3407878, 1310721, 2, 3473414, 1310721, 3, 3538950, 1310721, 4, 4718591, 262144, 9)
 
-[node name="blue_Hair_woman" parent="." unique_id=295565763 instance=ExtResource("14_a8y0u")]
-position = Vector2(100, 1155)
+[node name="NPC" type="CanvasGroup" parent="." unique_id=14743024]
+position = Vector2(418, 389)
 
-[node name="OverworkedVillager3" parent="." unique_id=1190027882 instance=ExtResource("19_0ld40")]
-position = Vector2(650, 866)
+[node name="blue_Hair_woman" parent="NPC" unique_id=295565763 instance=ExtResource("14_a8y0u")]
+position = Vector2(-318, 766)
+
+[node name="OverworkedVillager3" parent="NPC" unique_id=1190027882 instance=ExtResource("19_0ld40")]
+position = Vector2(232, 477)
+
+[node name="Eco" parent="NPC" unique_id=500524094 instance=ExtResource("22_jscy8")]
+
+[node name="blonde_man" parent="NPC" unique_id=566451509 instance=ExtResource("16_jbj1t")]
+position = Vector2(-184, 510)
 
 [node name="Player" parent="." unique_id=236905616 instance=ExtResource("10_choun")]
 position = Vector2(80, 1043)
@@ -1738,54 +1755,99 @@ layer_0/tile_data = PackedInt32Array(655366, 1114112, 5, 720902, 1114112, 6, 655
 
 [node name="DialogUI" parent="." unique_id=1621870210 instance=ExtResource("15_jkv2x")]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1294111909]
+[node name="HP" type="CanvasLayer" parent="." unique_id=1294111909]
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=123148893 groups=["life_bar"]]
+[node name="ProgressBar" type="ProgressBar" parent="HP" unique_id=123148893 groups=["life_bar"]]
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 24.0
 offset_bottom = 47.0
 value = 100.0
 
-[node name="OverworkedVillager2" parent="." unique_id=566451509 instance=ExtResource("16_jbj1t")]
-position = Vector2(234, 899)
+[node name="triggers" type="CanvasGroup" parent="." unique_id=1664149077]
+rotation = -0.030902144
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1277438942]
+[node name="trigger1" type="Area2D" parent="triggers" unique_id=1277438942]
+rotation = 0.030902144
 script = ExtResource("17_muem4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1781235561]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="triggers/trigger1" unique_id=1781235561]
 position = Vector2(223, 1034)
 rotation = -0.712632
 shape = SubResource("CapsuleShape2D_dp3eg")
 
-[node name="Area2D2" type="Area2D" parent="." unique_id=11402820]
-rotation = -0.030902144
+[node name="trigger2" type="Area2D" parent="triggers" unique_id=11402820]
 script = ExtResource("18_dp3eg")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=800878327]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="triggers/trigger2" unique_id=800878327]
 position = Vector2(367.49982, 992.82855)
 rotation = -0.0493114
 shape = SubResource("CapsuleShape2D_dp3eg")
 
-[node name="Area2D3" type="Area2D" parent="." unique_id=1683664907]
-rotation = -0.030902144
+[node name="trigger3" type="Area2D" parent="triggers" unique_id=1683664907]
 script = ExtResource("20_gqmmt")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3" unique_id=716604544]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="triggers/trigger3" unique_id=716604544]
 position = Vector2(459.9657, 655.52466)
 rotation = -1.5281969
 shape = SubResource("CapsuleShape2D_dp3eg")
 
-[node name="Area2D4" type="Area2D" parent="." unique_id=724386286]
-rotation = -0.030902144
+[node name="trigger4" type="Area2D" parent="triggers" unique_id=724386286]
 script = ExtResource("21_yc10j")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4" unique_id=2137820977]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="triggers/trigger4" unique_id=2137820977]
 position = Vector2(409.59418, 407.85004)
 rotation = -1.5281969
 shape = SubResource("CircleShape2D_jscy8")
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
-[connection signal="body_entered" from="Area2D3" to="Area2D3" method="_on_body_entered"]
-[connection signal="body_entered" from="Area2D4" to="Area2D4" method="_on_body_entered"]
+[node name="trigger5" type="Area2D" parent="triggers" unique_id=639267150]
+script = ExtResource("23_og1vs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="triggers/trigger5" unique_id=1193338541]
+position = Vector2(777.3967, 355.189)
+rotation = -3.10996
+shape = SubResource("CapsuleShape2D_y6deb")
+
+[node name="QuestUI" type="CanvasLayer" parent="." unique_id=936759991]
+script = ExtResource("23_pm3ni")
+
+[node name="Panel" type="Panel" parent="QuestUI" unique_id=1305806104]
+visible = false
+offset_left = 20.0
+offset_top = 60.0
+offset_right = 320.0
+offset_bottom = 90.0
+
+[node name="Label" type="Label" parent="QuestUI/Panel" unique_id=1461033538]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="itens" type="CanvasGroup" parent="." unique_id=864131149]
+
+[node name="fragmento_obe" parent="itens" unique_id=1119356155 instance=ExtResource("19_y6deb")]
+position = Vector2(21, 203)
+
+[node name="fragmento_obe2" parent="itens" unique_id=369807497 instance=ExtResource("19_y6deb")]
+position = Vector2(646, 100)
+
+[node name="fragmento_obe" parent="." unique_id=1075188392 instance=ExtResource("19_y6deb")]
+position = Vector2(691, 1394)
+
+[node name="Barreira" parent="." unique_id=2029471770 instance=ExtResource("26_2wyq8")]
+position = Vector2(799, 329)
+
+[node name="fragmento_obe2" parent="." unique_id=64348933 instance=ExtResource("19_y6deb")]
+position = Vector2(42, 1072)
+
+[node name="fragmento_obe3" parent="." unique_id=1497738734 instance=ExtResource("19_y6deb")]
+position = Vector2(43, 1095)
+
+[node name="fragmento_obe4" parent="." unique_id=120671547 instance=ExtResource("19_y6deb")]
+position = Vector2(43, 1107)
+
+[connection signal="body_entered" from="triggers/trigger1" to="triggers/trigger1" method="_on_body_entered"]
+[connection signal="body_entered" from="triggers/trigger2" to="triggers/trigger2" method="_on_body_entered"]
+[connection signal="body_entered" from="triggers/trigger3" to="triggers/trigger3" method="_on_body_entered"]
+[connection signal="body_entered" from="triggers/trigger4" to="triggers/trigger4" method="_on_body_entered"]
+[connection signal="body_entered" from="triggers/trigger5" to="triggers/trigger5" method="_on_body_entered"]

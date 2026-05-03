@@ -3,9 +3,7 @@ extends Area2D
 var triggered = false
 
 var dialogs = [
-	"Você: cade todo mundo?",
-	"Você: nunca vi esse lugar vazio, e cade o resto das casas?",
-	"Você: talvez aquele senhor no mercadinho saiba algo.",
+	"nao completa"
 ]
 
 var dialog_index = 0
@@ -15,15 +13,26 @@ func _ready():
 	dialog_ui = get_tree().get_first_node_in_group("dialog")
 
 func _on_body_entered(body):
-	if body.is_in_group("player") and not triggered:
+	if not body.is_in_group("player"):
+		return
+
+	if GameManager.is_quest_completed("ponte"):
+		return
+
+	if not GameManager.quests.has("ponte"):
+		GameManager.start_quest_ponte()
 		triggered = true
+		start_dialog()
+		return
+
+	if GameManager.is_quest_active("ponte"):
+		print("Missão da ponte já está em andamento")
 		start_dialog()
 
 func start_dialog():
 	GameManager.current_dialog = dialogs
 	GameManager.dialog_index = 0
 	GameManager.in_dialog = true
-	GameManager.start_quest_find_merchant()
 
 	dialog_ui.show_dialog(dialogs[0])
 		

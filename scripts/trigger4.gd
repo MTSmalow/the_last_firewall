@@ -56,6 +56,7 @@ func start_dialog():
 	GameManager.current_dialog = dialogs
 	GameManager.dialog_index = 0
 	GameManager.in_dialog = true
+	GameManager.complete_quest("lago_fragmento")
 
 	dialog_ui.show_dialog(dialogs[0])
 		

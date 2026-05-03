@@ -1,7 +1,7 @@
 extends Node
 
 @onready var player = $Player/CharacterBody2D
-@onready var life_bar = $CanvasLayer/ProgressBar
+@onready var life_bar = $HP/ProgressBar
 @onready var dialog_ui = $DialogUI	
 
 var dialogs = [

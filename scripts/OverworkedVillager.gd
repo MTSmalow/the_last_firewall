@@ -51,6 +51,7 @@ func _on_area_2d_body_exited(body):
 		player_in_range = false
 
 func start_dialog():
+	GameManager.complete_quest("find_merchant")
 	if dialog_ui:
 		GameManager.in_dialog = true
 		is_talking = true
@@ -70,6 +71,8 @@ func end_dialog():
 	dialog_index = 0
 	GameManager.in_dialog = false
 	dialog_ui.panel.visible = false
+	
+	GameManager.start_quest_lago()
 
 func _process(delta):
 	if player_in_range and Input.is_action_just_pressed("interact"):
