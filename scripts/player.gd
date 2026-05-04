@@ -71,13 +71,25 @@ func update_animation():
 			anim.play("walk_right")
 
 func _physics_process(delta):
+	collision_mask = 1 | 2
+	
 	if GameManager.in_dialog:
 		velocity = Vector2()
 		move_and_slide()
 		return
 	
-	handle_attack()
-	read_input()
+	if is_hurt:
+		velocity = knockback_velocity
+		
+		# desaceleração suave (opcional, mas fica muito melhor)
+		knockback_velocity = knockback_velocity.lerp(Vector2.ZERO, 6 * delta)
+		
+		if knockback_velocity.length() < 10:
+			is_hurt = false
+	else:
+		handle_attack()
+		read_input()
+	
 	update_animation()
 	move_and_slide()
 

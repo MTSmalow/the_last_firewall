@@ -3,10 +3,6 @@
 [ext_resource type="Script" uid="uid://dp754bpwwubpo" path="res://scripts/eco.gd" id="1_462wp"]
 [ext_resource type="Texture2D" uid="uid://c78rqo0bj4alm" path="res://assets/Npc/eco/image.png" id="2_462wp"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pgelm"]
-radius = 9.43113
-height = 24.869799
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_j3l4d"]
 atlas = ExtResource("2_462wp")
 region = Rect2(0, 0, 85, 159)
@@ -43,38 +39,42 @@ animations = [{
 "speed": 4.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lpr8a"]
-radius = 28.73802
-height = 57.47604
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pgelm"]
+radius = 4.1986017
+height = 13.418339
 
-[node name="OverworkedVillager" type="Node2D" unique_id=295565763]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lpr8a"]
+radius = 10.341959
+height = 34.596977
+
+[node name="OverworkedVillager" type="Node2D" unique_id=295565763 groups=["enemy"]]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1780563814 groups=["enemy"]]
 script = ExtResource("1_462wp")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1780563814]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1817746232]
-position = Vector2(2, -1)
-rotation = 0.005172968
-scale = Vector2(0.95654345, 1.0454328)
-skew = -0.0019651651
-shape = SubResource("CapsuleShape2D_pgelm")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1959736505]
-position = Vector2(1.0658209, -3.7499986)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1959736505]
+position = Vector2(1.0658209, -3.7499983)
 scale = Vector2(0.30433363, 0.28616357)
 sprite_frames = SubResource("SpriteFrames_lrtft")
 frame_progress = 0.89808184
 
-[node name="Area2D" type="Area2D" parent="." unique_id=32549493]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1817746232]
+position = Vector2(3, 11)
+rotation = -1.5855283
+scale = Vector2(0.95654345, 1.0454328)
+skew = -0.0019651651
+shape = SubResource("CapsuleShape2D_pgelm")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D" unique_id=32549493]
 position = Vector2(0.9999999, 5.999999)
 rotation = -1.5491331
-scale = Vector2(0.99999994, 0.8714913)
+scale = Vector2(0.9999999, 0.8714913)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=709427185]
-position = Vector2(7.0200186, 0.973199)
-rotation = -0.08193614
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D" unique_id=709427185]
+position = Vector2(8.041447, 2.0955322)
+rotation = -1.5797268
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("CapsuleShape2D_lpr8a")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_exited"]

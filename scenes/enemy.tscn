@@ -558,7 +558,8 @@ size = Vector2(17, 22)
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1299634097 groups=["enemy"]]
 script = ExtResource("1_md0e3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1013062127]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1013062127 groups=["enemy"]]
+visible = false
 position = Vector2(0.9999999, 5.999999)
 rotation = -1.5491331
 scale = Vector2(1, 0.8714913)
@@ -571,7 +572,6 @@ animation = &"death"
 [node name="Area2D" type="Area2D" parent="." unique_id=1555922340]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1370207762]
-visible = false
 position = Vector2(0.5, -2)
 shape = SubResource("RectangleShape2D_4ra3w")
 

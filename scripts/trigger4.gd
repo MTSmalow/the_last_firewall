@@ -59,4 +59,5 @@ func start_dialog():
 	GameManager.complete_quest("lago_fragmento")
 
 	dialog_ui.show_dialog(dialogs[0])
+	GameManager.start_quest_ponte()
 		

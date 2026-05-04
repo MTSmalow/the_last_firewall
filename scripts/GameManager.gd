@@ -36,7 +36,7 @@ func complete_quest(id):
 		if current_quest_id == id:
 			current_quest_id = null
 		
-		if id == "ponte":
+		if id == "fragmentos":
 			get_tree().call_group("barreira_ponte", "disable_barrier")
 		print("Missão completa:", quests[id]["name"])
 
@@ -63,7 +63,14 @@ func start_quest_lago():
 
 func start_quest_ponte():
 	add_quest(
-		"ponte",
+		"investigue_ponte",
+		"Investigar a ponte",
+		"Vá até a ponte"
+	)
+
+func start_quest_fragmentos():
+	add_quest(
+		"fragmentos",
 		"Colete 3 Fragmentos de eco",
 		"Encontre 3 fragmentos para restaurar a ponte.",
 		"fragmento",
