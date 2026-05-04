@@ -50,29 +50,29 @@ func is_quest_completed(id):
 func start_quest_find_merchant():
 	add_quest(
 		"find_merchant",
-		"Falar com o comerciante",
-		"Procure o senhor no mercadinho para entender o que está acontecendo."
+		"Talk to the merchant",
+		"Find the old man at the shop to understand what is happening."
 	)
 
 func start_quest_lago():
 	add_quest(
 		"lago_fragmento",
-		"Investigar o lago",
-		"Vá até o lago ao norte e veja o que o fragmento revela."
+		"Investigate the lake",
+		"Go to the lake to the north and see what the fragment reveals."
 	)
 
 func start_quest_ponte():
 	add_quest(
-		"investigue_ponte",
-		"Investigar a ponte",
-		"Vá até a ponte"
+		"investigate_bridge",
+		"Investigate the bridge",
+		"Go to the bridge"
 	)
 
 func start_quest_fragmentos():
 	add_quest(
-		"fragmentos",
-		"Colete 3 Fragmentos de eco",
-		"Encontre 3 fragmentos para restaurar a ponte.",
+		"fragmento",
+		"Collect 3 Echo Fragments",
+		"Find 3 fragments to restore the bridge.",
 		"fragmento",
 		3
 	)

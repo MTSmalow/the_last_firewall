@@ -3,9 +3,9 @@ extends Area2D
 var triggered = false
 
 var dialogs = [
-	"Celular: SINAL INSTÁVEL DETECTADO",
-	"Celular: INTERFERÊNCIA LOCALIZADA",
-	"Celular: ANOMALIA PRÓXIMA"
+	"Phone: UNSTABLE SIGNAL DETECTED",
+	"Phone: INTERFERENCE LOCATED",
+	"Phone: ANOMALY NEARBY"
 ]
 
 var dialog_index = 0

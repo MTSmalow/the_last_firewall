@@ -3,10 +3,10 @@ extends Area2D
 var triggered = false
 
 var dialogs = [
-	"Você: Por que aquele cara esta daquele jeito?",
-	"Você: Há algo errado",
-	"Você: Ele não reage ao obstáculo, apenas continua, como uma marionete.",
-	"Você: O que esta acontecendo aqui?"
+	"You: Why is that guy like that?",
+	"You: Something is wrong",
+	"You: He doesn’t react to the obstacle, he just keeps going, like a puppet.",
+	"You: What is happening here?"
 ]
 
 var dialog_index = 0

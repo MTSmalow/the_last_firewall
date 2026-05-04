@@ -5,10 +5,10 @@ extends Node
 @onready var dialog_ui = $DialogUI	
 
 var dialogs = [
-	"Você: ...",
-	"SINAL INSTÁVEL DETECTADO",
-	"Você: o que é isso?",
-	"Você: melhor perguntar para alguem."
+	"You: ...",
+	"UNSTABLE SIGNAL DETECTED",
+	"You: what is this?",
+	"You: better ask someone."
 ]
 
 func _ready():

@@ -3,9 +3,9 @@ extends Area2D
 var triggered = false
 
 var dialogs = [
-	"Você: cade todo mundo?",
-	"Você: nunca vi esse lugar vazio, e cade o resto das casas?",
-	"Você: talvez aquele senhor no mercadinho saiba algo.",
+	"You: where is everyone?",
+	"You: I’ve never seen this place empty, and where are the rest of the houses?",
+	"You: maybe that old man at the shop knows something.",
 ]
 
 var dialog_index = 0

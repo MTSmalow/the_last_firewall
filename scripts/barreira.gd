@@ -6,6 +6,7 @@ func _ready():
 	check_barrier()
 
 func check_barrier():
+	GameManager.complete_quest("investigate_bridge")
 	if GameManager.is_quest_completed("ponte"):
 		disable_barrier()
 
